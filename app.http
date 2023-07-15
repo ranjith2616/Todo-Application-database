@@ -1,0 +1,68 @@
+
+
+###
+// GET all Values from Table
+GET http://localhost:3000/todos/
+###
+
+//API 1 
+// Scenario 1
+GET http://localhost:3000/todos/?status=TO%20DO
+
+### 
+// Scenario 2
+GET http://localhost:3000/todos/?priority=HIGH
+
+###
+// Scenario 3
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+
+###
+// Scenario 4
+GET http://localhost:3000/todos/?search_q=Play
+
+### 
+// API 2
+GET http://localhost:3000/todos/10/
+
+###
+// API POST
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+  "id": 10,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO"
+}
+
+###
+// API PUT 4
+// Scenario 1
+PUT http://localhost:3000/todos/10/
+Content-Type: application/json
+
+{
+    "status":"DONE"
+}
+
+###
+PUT http://localhost:3000/todos/10/
+Content-Type: application/json
+
+{
+    "priority":"HIGH"
+}
+    
+###
+PUT http://localhost:3000/todos/10/
+Content-Type: application/json
+
+{
+    "todo":"Some task"
+}
+
+###
+// API 5 DELETE
+DELETE http://localhost:3000/todos/6/
